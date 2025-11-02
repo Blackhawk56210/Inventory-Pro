@@ -1,16 +1,28 @@
-# React + Vite
+<!-- 📋 TO DO -->
+~Set up the database
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+--Make a table called inventory with columns like:
+---id, name, category, quantity
 
-Currently, two official plugins are available:
+--Try out a few queries manually (INSERT, SELECT, DELETE).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---Build backend
 
-## React Compiler
+-Set up an Express server.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-Create routes like:
 
-## Expanding the ESLint configuration
+--GET /items → fetch all items
+--POST /items → add new item
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+--DELETE /items/:id → delete item
+
+--Use something like sqlite3 or mysql2 npm package.
+
+--Connect frontend
+
+--Use a form to add new items.
+
+--Use fetch() to call your API routes.
+
+--Display results dynamically on the page with JS.

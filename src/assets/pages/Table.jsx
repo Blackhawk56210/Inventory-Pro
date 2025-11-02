@@ -1,20 +1,19 @@
-import React from "react";
+import ColumnHeaders from "./Column-Headers";
 
 function Table() {
+    const headers = [
+        "I.D.", "Name", "Type", "Price", "Quantity", "Arrival", "Time",
+    ];
+  const mapped = headers.map((headers, index) => 
+    <h3 key={index}>{headers.text}</h3>
+  )
+
+//   Finish mapping over other rows and setting up table
   return (
     <>
       <div className="bg-sky-200 w-screen">
         <table className="table-auto">
-          <thead>
-            <tr>
-              <th>I.D.</th>
-              <th>Name</th>
-              <th>Type</th>
-              <th className="bg-amber-700">Price</th>
-              <th>Quantity</th>
-              <th>Arrival Time</th>
-            </tr>
-          </thead>
+          <h3>{headers}</h3>
           <tbody>
             <tr>
               <td>data</td>
