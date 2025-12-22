@@ -1,20 +1,22 @@
-import ColumnHeaders from "./Column-Headers";
 
 function Table() {
-    const headers = [
-        "I.D.", "Name", "Type", "Price", "Quantity", "Arrival", "Time",
-    ];
-  const mapped = headers.map((headers, index) => 
-    <h3 key={index}>{headers.text}</h3>
-  )
+  const header = [
+    "Number ID", "Name", "Type", "Price", "Quantity", "Arrival", "Time",
+  ];
+  const columnHeaders = header.map((header, index) => 
+    <th key={index}>{header}</th>
+  );
 
-//   Finish mapping over other rows and setting up table
   return (
     <>
-      <div className="bg-sky-200 w-screen">
+      <div className="bg-sky-200 overflow-x-auto">
         <table className="table-auto">
-          <h3>{headers}</h3>
           <tbody>
+            <thead>
+              <tr>
+                {columnHeaders}
+              </tr>
+            </thead>
             <tr>
               <td>data</td>
               <td>data</td>

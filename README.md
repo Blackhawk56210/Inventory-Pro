@@ -1,12 +1,20 @@
 <!-- 📋 TO DO -->
-~Set up the database
+## Frontend To-Do
+~~Setup base functional table/homepage
+ -- add side dash to see:
+        -inventory
+        -outgoing orders
+        -incoming orders
+        -invoices
+ --add Id, name, category, pricer per unit/case, # in stock, reorder schedule, reorder amount
 
+
+
+## Backend To-Do
+~Set up the database
 --Make a table called inventory with columns like:
 ---id, name, category, quantity
-
---Try out a few queries manually (INSERT, SELECT, DELETE).
-
----Build backend
+-----------
 
 -Set up an Express server.
 
@@ -17,12 +25,9 @@
 
 --DELETE /items/:id → delete item
 
---Use something like sqlite3 or mysql2 npm package.
+--Use postegresesql. //https://www.postgresql.org/
 
 --Connect frontend
-
 --Use a form to add new items.
-
 --Use fetch() to call your API routes.
-
 --Display results dynamically on the page with JS.
