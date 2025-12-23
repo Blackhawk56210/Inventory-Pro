@@ -8,6 +8,9 @@
         -invoices
  --add Id, name, category, pricer per unit/case, # in stock, reorder schedule, reorder amount
 
+## API
+Kroger API
+ <!-- https://developer.kroger.com/api-products/api/product-api-public -->
 
 
 ## Backend To-Do
