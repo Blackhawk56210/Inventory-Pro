@@ -5,11 +5,11 @@ function ColumnHeaders() {
     "Number ID", "Name", "Type", "Price", "Quantity", "Arrival", "Time",
   ];
   const columnHeaders = headers.map((headers, index) => 
-    <p key={index}>{headers.text}</p>
+    <thead key={index}>{headers.text}</thead>
   )
   return (
     <>
-    <p>{columnHeaders}</p>
+    <thead>{columnHeaders}</thead>
     </>
   )
 }

@@ -10,7 +10,13 @@
 
 ## API
 Kroger API
- <!-- https://developer.kroger.com/api-products/api/product-api-public -->
+<!-- https://developer.kroger.com/documentation -->
+<!-- https://api.kroger.com/v1/products -->
+
+<!-- 
+       
+ -->
+
 
 
 ## Backend To-Do
