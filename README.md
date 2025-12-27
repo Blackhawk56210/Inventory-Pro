@@ -13,9 +13,8 @@ Kroger API
 <!-- https://developer.kroger.com/documentation -->
 <!-- https://api.kroger.com/v1/products -->
 
-<!-- 
-       
- -->
+-- product tutorial
+<!-- https://developer.kroger.com/documentation/api-products/public/products/tutorial -->
 
 
 
