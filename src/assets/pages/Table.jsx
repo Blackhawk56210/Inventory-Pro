@@ -10,6 +10,11 @@ function Table() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+
+        // const accessToken = await getAccessToken()
+        // https://www.youtube.com/watch?v=AcYF18oGn6Y
+
+
         const res = await fetch(`https://api.kroger.com/v1/products`);
         if (!res.ok) {
           throw new Error(`error status ${res.status}`)
