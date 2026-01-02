@@ -11,7 +11,7 @@ function Table() {
     const fetchData = async () => {
       try {
 
-        // const accessToken = await getAccessToken()
+        const accessToken = await getAccessToken()
         // https://www.youtube.com/watch?v=AcYF18oGn6Y
 
 
