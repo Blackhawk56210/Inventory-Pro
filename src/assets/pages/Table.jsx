@@ -1,76 +1,59 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 
 function Table() {
-
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-
-        const accessToken = await getAccessToken()
-        // https://www.youtube.com/watch?v=AcYF18oGn6Y
-
-
-        const res = await fetch(`https://api.kroger.com/v1/products`);
-        if (!res.ok) {
-          throw new Error(`error status ${res.status}`)
-        }
+        const res = await fetch("http://localhost:5000/api/products");
+        if (!res.ok) throw new Error(`Error ${res.status}`);
         const json = await res.json();
-          setData( json.data || [] );
-          setIsLoading( false );
-      } catch (error) {
-          console.log("Data Fetch Failure: ", error)
-          setError(error);
-          setIsLoading(false);
+        setData(json);
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err);
+        setError(err);
+        setIsLoading(false);
       }
     };
+
     fetchData();
   }, []);
 
-  if (isLoading) {
-    return <div> Loading... </div>
-  }
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
-  if (error) {
-    return <div> Error: {error.message} </div>
-  }
-
-  const columnHeaders = Array.isArray(data) && data.length > 0
-  // checking if my data is an array and has a length greater than 0 .isArray does this
-    obj.keys(data[0]).map((key, index) => 
-      // .keys()  retrieve the names of the properties (or keys) 
-      // within a data structure like a dictionary or object. 
-      <th key={index}>{key}</th>
-  ), [];
-
-  useEffect
+  // dynamically create headers based on first row
+  const columnHeaders = data[0] ? Object.keys(data[0]) : [];
 
   return (
-    <>
-      <div className="bg-sky-200 overflow-x-auto">
-        <table className="table-auto">
-          <thead>
-            <tr>
-              {columnHeaders}
-            </tr>
-          </thead>
-          <tbody>
-            {/* I'm pretty sure I did this wrong or at least in the wrong spot */}
-            {Array.isArray(data) && data.map((item, index) => (
-              <tr key={index}>
-                {obj.values(item).map((value, valueIndex) => (
-                  <td key={valueIndex}>{value}</td>
-                ))}
-              </tr>
+    <div className="bg-sky-200 overflow-x-auto">
+      <table className="table-auto border-collapse border border-gray-400">
+        <thead>
+          <tr>
+            {columnHeaders.map((col, idx) => (
+              <th key={idx} className="border border-gray-300 px-2 py-1">
+                {col}
+              </th>
             ))}
-          </tbody>
-        </table>
-      </div>
-    </>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, idx) => (
+            <tr key={idx}>
+              {Object.values(item).map((val, vIdx) => (
+                <td key={vIdx} className="border border-gray-300 px-2 py-1">
+                  {val}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
